@@ -1,3 +1,11 @@
+Para roda o projeto
+================
+
+- npm install
+- npm start
+- npm test 
+
+
 Principais Libs utilizadas
 ================
 - styled-components
@@ -37,3 +45,6 @@ tests
         └── actions.test.js
         └── reducers.test.js
 ```
+
+## ABORDAGEM DO PROJETO
+Utilizei um a arquitetura baseada no redux, fala acima, usei a lib axios para as requisições, utilizei na criação dos componentes um abordagem usando `hooks` e `class` do `reactjs`
