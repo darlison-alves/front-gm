@@ -6,27 +6,68 @@ export const Container = styled.div`
   justify-content: center;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
+  height: 30vh;
   
 `
 
+export const ContainerMenu = styled.div`
+    color: #000!important;
+    background-color: #f1f1f1!important;
+    height: 100%;
+    width: 25%;
+    background-color: #fff;
+    position: fixed!important;
+    z-index: 1;
+    overflow: auto;
+`
+
 export const ContainerList = styled.div`
-    margin-left: 30px;
-    float: right
-    max-width: 672px;
+    margin-left: 25%;
+    float: left
+    max-width: 672px;    
 `;
+
+export const ContainerChildren = styled.div `
+    padding: 0.01em 16px;
+    color: #fff!important;
+    background-color: #138496!important;
+    padding: 20px 10px;
+    
+`
+
+export const ContainerChildren2 = styled.div `
+    padding: 0.01em 16px;    
+`
 
 export const ContainerCardList = styled.div`
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    
+    float: left;        
+`;
+
+export const ContainerCardListText = styled.div`
+display: block;
+outline: 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;    
 `;
 
 export const ContainerListText = styled.h5`
     margin: 0;
     line-height: 1;
-    padding-bottom: 0.2rem;
     font-size: 1.25rem;
+    display: inline-block;
+    outline: 0;
+    
+`
+
+export const ContainerListTextRigth = styled.h4`    
+    line-height: 1;
+    font-size: 1.25rem;
+    float: right;
+    display: inline-block;
+    outline: 0;
 `
 
 export const ContainerListTextHeader = styled.h5`
@@ -36,6 +77,7 @@ export const ContainerListTextHeader = styled.h5`
     font-size: 1.25rem;
     text-align: center;
     margin-bottom: 20px;
+    margin-top: 20px;
 `
 
 export const ContainerListCard = styled.div`
@@ -44,10 +86,10 @@ export const ContainerListCard = styled.div`
     --spacer: 1em;
     background-color: white;
     padding: var(--spacer);
-    border-radius: calc(var(--spacer)/3);
+    
     box-shadow: 0 2px 6px 0px rgba(0, 0, 0, 0.3);
     margin: 10px;
-    width: 200px
+    width: 400px
 `
 
 export const ContainerListCardHeader = styled.div`
@@ -71,7 +113,7 @@ export const ContainerListCardMain = styled.div`
 export const ProfileUserpic = styled.div`
 
     width: 400px;
-    background: #fff;
+    
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -94,9 +136,9 @@ export const ProfileUserpic = styled.div`
     }    
    
     p {
-        color: #ff3333;
+        color: #138496;
         margin-bottom: 15px;
-        border: 1px solid #ff3333;
+        border: 1px solid #138496;
         padding: 10px;
         width: 100%;
         text-align: center;
@@ -136,4 +178,33 @@ export const ProfileUserpic = styled.div`
         text-decoration: none;
     }
     
+`
+export const ButtonSair = styled.button`
+    background-color: "#ff3333";
+    display: inline-block;
+    margin-right: 0vw;
+    font-size: 20px;
+    text-align: center;   
+    float: right
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+`
+
+export const TextHeader = styled.h2`
+    display: inline-block;
 `

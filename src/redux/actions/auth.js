@@ -1,4 +1,5 @@
 import { api } from "./api";
+import { SUCCESS_USER } from "./user";
 
 export const USER_NAME = '@username';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
@@ -11,11 +12,11 @@ export const getUsername = () => localStorage.getItem(USER_NAME);
 
 export const login = data => dispatch => {
     dispatch({ type: LOGIN_LOADING })
-    api.get(`/users/${data.username}`).then(res => {
+    return api.get(`/users/${data.username}`).then(res => {
         localStorage.setItem(USER_NAME, data.username)
         dispatch({ type: LOGIN_SUCCESS, user: res.data })
+        dispatch({ type: SUCCESS_USER, payload: res.data })
     }).catch(err => {
-       
         if(err.response && err.response.status === 404) 
             dispatch({ type: LOGIN_FAILED, error: 'usuário não encontrado.' })
         else if(err.response) 
@@ -27,4 +28,9 @@ export const login = data => dispatch => {
 
 export const setError = () => dispatch => {
     dispatch({ type: LOGIN_FAILED, error: null })
+}
+
+export const logout = () => dispatch => {
+    localStorage.clear()
+    dispatch({ type: LOGIN_SUCCESS, user: {} })
 }

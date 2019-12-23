@@ -1,17 +1,10 @@
 import React from 'react';
-import { StyledSpinner } from "./loading_styles";
 
 export function Loading() {
     return (
-        <StyledSpinner viewBox="0 0 50 50">
-            <circle
-                className="path"
-                cx="25"
-                cy="25"
-                r="20"
-                fill="none"
-                strokeWidth="4"
-            />
-        </StyledSpinner>
+        <>
+            <i className="fa fa-refresh fa-spin fa-3x fa-fw" aria-hidden="true"> </i>
+            <span className="sr-only">CARREGANDO...</span>
+        </>
     )
 }

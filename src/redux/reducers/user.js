@@ -1,29 +1,26 @@
-import { LOGIN_SUCCESS, LOGIN_LOADING, LOGIN_FAILED } from "../actions/auth";
+import { LOADING_USER, SUCCESS_USER, FAILED_USER } from "../actions/user";
 
-const INITIAL_STATE = {
-    loading_data_user: false,
+export const INITIAL_STATE = {
     data: {},
-    error: null
+    loading_user: false
 }
-
 export default (state = INITIAL_STATE, action) => {
-    switch (action.type) {
-        case LOGIN_LOADING:
+    switch(action.type){
+        case LOADING_USER:
             return {
                 ...state,
-                loading_data_user: true
+                loading_user: true
             }
-        case LOGIN_SUCCESS:
+        case SUCCESS_USER:
             return {
                 ...state,
-                data: action.user,
-                loading_data_user: false
+                data: action.payload,
+                loading_user: false
             }
-        case LOGIN_FAILED:
+        case FAILED_USER:
             return {
                 ...state,
-                error: action.error,
-                loading_data_user: false
+                error: action.payload
             }
         default:
             return state

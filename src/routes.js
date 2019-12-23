@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
 import { isAuthenticated } from './redux/actions/auth'
 import { SignIn } from './pages/SignIn';
-import { Profile } from './Components/Profile/Profile';
+import { ProfileConnected } from './Components/Profile/ProfileConnected';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -14,9 +14,9 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
 
 const Routes = () => (
     <BrowserRouter>
-        <Switch>
+        <Switch>            
             <Route exact path="/" component={SignIn} />
-            <PrivateRoute path="/app" component={Profile} />
+            <PrivateRoute path="/app" component={ProfileConnected} />
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
     </BrowserRouter>

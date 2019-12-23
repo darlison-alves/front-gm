@@ -31,6 +31,6 @@ export function SignInForm({ login, loading_data_user, user = {}, history, error
 }
 
 export const AccessButton = ({ loading }) => {
-    if (loading) return <Loading />
+    if (loading) return <button type="submit"> <Loading /> </button>
     return <button type="submit"> ACESSAR </button>
 }
